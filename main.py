@@ -1,3 +1,8 @@
+#TODO: multiplayer
+#TODO: save/load
+#TODO: character creation
+#TODO: main menu
+
 from datetime import datetime
 import json
 import math
