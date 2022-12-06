@@ -374,10 +374,7 @@ class ProgressBar(QtWidgets.QProgressBar):
     game[self.id]["hint"] = template(self.tmpl, game[self.id])
 
     p = round(100 * self.Position() / self.Max() if self.Max() else 0)
-    try:
-      self.setValue(p)
-    except:
-      pass
+    self.setValue(p)
 
   def increment(self, inc):
     self.reposition(self.Position() + inc)
@@ -410,31 +407,28 @@ class TableBox(QtWidgets.QTableWidget):
   def PutUI(self, key, value): 
     i = 0
     still = True
-    try:
-      if self.rowCount() == 0:
-        self.insertRow(0)
-        self.setItem(0, 0, QtWidgets.QTableWidgetItem(key))
-        self.setItem(0, 1, QtWidgets.QTableWidgetItem(str(value)))
-      else:
-        for i in range(self.rowCount()):
-          if self.item(i, 0).text() == key:
-            self.item(i, 1).setText(value)
-            still = False
-            break
-        
-        i += 1
+    if self.rowCount() == 0:
+      self.insertRow(0)
+      self.setItem(0, 0, QtWidgets.QTableWidgetItem(key))
+      self.setItem(0, 1, QtWidgets.QTableWidgetItem(str(value)))
+    else:
+      for i in range(self.rowCount()):
+        if self.item(i, 0).text() == key:
+          self.item(i, 1).setText(value)
+          still = False
+          break
+      
+      i += 1
 
-        if still:
-          self.insertRow(i)
-          self.setItem(i, 0, QtWidgets.QTableWidgetItem(key))
-          self.setItem(i, 1, QtWidgets.QTableWidgetItem(str(value)))
+      if still:
+        self.insertRow(i)
+        self.setItem(i, 0, QtWidgets.QTableWidgetItem(key))
+        self.setItem(i, 1, QtWidgets.QTableWidgetItem(str(value)))
 
-      self.selectRow(i)
-    except:
-      pass
+    self.selectRow(i)
 
   def scrollToTop(self):
-    self.scrollTo(0, QtWidgets.QAbstractItemView.PositionAtTop)
+    self.scrollTo(self.model().index(0, 0),QtWidgets.QAbstractItemView.PositionAtTop)
 
   def length(self):
     return len(self.fixedkeys or game[self.id])
@@ -448,16 +442,13 @@ class TableBox(QtWidgets.QTableWidget):
     game[self.id].insert(0, t)
 
   def load(self, game): 
-    try:
-      if type(game[self.id]) is list:
-        for item in game[self.id]:
-          self.PutUI(item[0], item[1])
+    if type(game[self.id]) is list:
+      for item in game[self.id]:
+        self.PutUI(item[0], item[1])
 
-      if type(game[self.id]) is dict:
-        for key, value in game[self.id].items():
-          self.PutUI(key, value)
-    except:
-      pass
+    if type(game[self.id]) is dict:
+      for key, value in game[self.id].items():
+        self.PutUI(key, value)
 
   def label(self, n):
     return self.fixedkeys[n] if self.fixedkeys else game[self.id][n][0]
@@ -475,11 +466,13 @@ class ListBox(QtWidgets.QListWidget):
     item.setCheckState(QtCore.Qt.Unchecked)
     self.addItem(item)
 
+    self.scrollToItem(item, QtWidgets.QAbstractItemView.PositionAtBottom)
+
   def ClearSelection(self):
     self.clearSelection()
 
   def scrollToTop(self):
-    self.scrollTo(0, QtWidgets.QAbstractItemView.PositionAtTop)
+    self.scrollTo(self.model().index(0, 0),QtWidgets.QAbstractItemView.PositionAtTop)
 
   def CheckAll(self, butlast=False):
     for i in range(self.count() - (1 if butlast else 0)):
@@ -1197,6 +1190,7 @@ class Ui_progressQuest(object):
         self.label_16.setText(_translate("progressQuest", "Encumbrance"))
         self.label_12.setText(_translate("progressQuest", "Plot Development"))
         self.label_17.setText(_translate("progressQuest", "Quests"))
+
 class Main(QtWidgets.QWidget, Ui_progressQuest):
     def __init__(self):
         global lasttick
