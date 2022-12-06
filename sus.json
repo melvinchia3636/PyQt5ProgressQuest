@@ -1,0 +1,633 @@
+{
+    "Traits": {
+        "Name": "Upniem",
+        "Race": "Panda Man",
+        "Class": "Inner Mason",
+        "Level": 44
+    },
+    "dna": [
+        0.40672962623648345,
+        0.34507150389254093,
+        0.33590154349803925,
+        612140
+    ],
+    "seed": [
+        0.26577398809604347,
+        0.5603990773670375,
+        0.9834485047031194,
+        1152854
+    ],
+    "birthday": "Mon Nov 28 2022 07:57:24 GMT+0800 (Malaysia Time)",
+    "birthstamp": 1669593444948,
+    "Stats": {
+        "seed": [
+            0.40672962623648345,
+            0.34507150389254093,
+            0.33590154349803925,
+            612140
+        ],
+        "STR": 167,
+        "best": "STR",
+        "CON": 62,
+        "DEX": 82,
+        "INT": 79,
+        "WIS": 89,
+        "CHA": 176,
+        "HP Max": 562,
+        "MP Max": 548
+    },
+    "beststat": "CHA 176",
+    "task": "kill|Porn Elemental|12|lube",
+    "tasks": 69424,
+    "elapsed": 260883,
+    "bestequip": "+23 Custom Studded ABS Vambraces",
+    "Equips": {
+        "Weapon": "+27 Venomed Steely Halberd",
+        "Shield": "+31 Custom Studded Tower Shield",
+        "Helm": "+22 Impressive ABS",
+        "Hauberk": "+11 Gilded Studded Plasma",
+        "Brassairts": "+19 Impressive Studded Titanium",
+        "Vambraces": "+23 Custom Studded ABS",
+        "Gauntlets": "+5 Impressive Holy Plasma",
+        "Gambeson": "+9 Festooned Gilded Plasma",
+        "Cuisses": "+14 Holy Cambric Diamond Mail",
+        "Greaves": "+8 Studded Impressive Plasma",
+        "Sollerets": "+17 Fine Festooned Titanium"
+    },
+    "Inventory": [
+        [
+            "Gold",
+            7185
+        ],
+        [
+            "rubber golem ball",
+            2
+        ],
+        [
+            "pit fiend seed",
+            1
+        ],
+        [
+            "chromatic dragon scale",
+            2
+        ],
+        [
+            "hair elemental follicle",
+            1
+        ],
+        [
+            "dispater matches",
+            2
+        ],
+        [
+            "asmodeus leathers",
+            2
+        ],
+        [
+            "Unearthly Ornament of Hurting",
+            1
+        ],
+        [
+            "ankylosaurus tail",
+            1
+        ],
+        [
+            "gorgosaurus arm",
+            2
+        ],
+        [
+            "cloud giant condensation",
+            1
+        ],
+        [
+            "red dragon cocktail",
+            1
+        ],
+        [
+            "Ostentatious Fleece of Perspicacity",
+            1
+        ],
+        [
+            "monoclonius horn",
+            1
+        ],
+        [
+            "sphinx paw",
+            3
+        ],
+        [
+            "titan sandal",
+            3
+        ],
+        [
+            "jubilex gel",
+            2
+        ],
+        [
+            "roc wing",
+            2
+        ],
+        [
+            "geryon cornucopia",
+            1
+        ],
+        [
+            "will-o'-the-wisp wisp",
+            1
+        ],
+        [
+            "Dual Lamp of Suffering",
+            1
+        ],
+        [
+            "barbed devil flame",
+            1
+        ],
+        [
+            "Fearsome Amethyst of Petulance",
+            1
+        ],
+        [
+            "purple worm dung",
+            2
+        ],
+        [
+            "stegosaurus plate",
+            3
+        ],
+        [
+            "storm giant barometer",
+            1
+        ],
+        [
+            "mimic hinge",
+            1
+        ],
+        [
+            "yeenoghu flail",
+            2
+        ],
+        [
+            "cardboard golem recycling",
+            1
+        ],
+        [
+            "Blessed Bandolier of Fear",
+            1
+        ],
+        [
+            "stone giant hatchling",
+            2
+        ],
+        [
+            "Garlanded Vulpeculum of Prurience",
+            1
+        ],
+        [
+            "dragon turtle shell",
+            1
+        ],
+        [
+            "shambling mound mulch",
+            1
+        ],
+        [
+            "beer golem foam",
+            2
+        ],
+        [
+            "demogorgon tentacle",
+            1
+        ],
+        [
+            "Astral Sceptre of Electrum",
+            1
+        ],
+        [
+            "nalfeshnee tusk",
+            1
+        ],
+        [
+            "brontosaurus brain",
+            2
+        ],
+        [
+            "trapper shag",
+            1
+        ],
+        [
+            "sand elemental glass",
+            1
+        ],
+        [
+            "oxygen golem platelet",
+            1
+        ],
+        [
+            "jellyrock seedling",
+            1
+        ],
+        [
+            "roper twine",
+            1
+        ],
+        [
+            "megalosaurus jaw",
+            1
+        ],
+        [
+            "Sacred Lamp of Rapidity",
+            1
+        ],
+        [
+            "cheese elemental curd",
+            2
+        ],
+        [
+            "ice devil snow",
+            1
+        ],
+        [
+            "diplodocus fin",
+            1
+        ],
+        [
+            "Fearsome Sphere of Submission",
+            1
+        ],
+        [
+            "lurker sac",
+            1
+        ],
+        [
+            "Lucky Lens of Solitude",
+            1
+        ],
+        [
+            "leather golem fob",
+            2
+        ],
+        [
+            "gold dragon filling",
+            1
+        ],
+        [
+            "vampire pancreas",
+            1
+        ],
+        [
+            "wraith finger",
+            1
+        ],
+        [
+            "beholder eyestalk",
+            1
+        ]
+    ],
+    "Spells": [
+        [
+            "Seasick",
+            "XXVII"
+        ],
+        [
+            "Inoculate",
+            "XXVIII"
+        ],
+        [
+            "Invisible Hands",
+            "XVI"
+        ],
+        [
+            "Cone of Annoyance",
+            "XXVI"
+        ],
+        [
+            "Spectral Miasma",
+            "XXV"
+        ],
+        [
+            "Shoelaces",
+            "XVI"
+        ],
+        [
+            "Hydrophobia",
+            "XXII"
+        ],
+        [
+            "Nestor's Bright Idea",
+            "XVIII"
+        ],
+        [
+            "Revolting Cloud",
+            "X"
+        ],
+        [
+            "Magnetic Orb",
+            "XXV"
+        ],
+        [
+            "Good Move",
+            "XXII"
+        ],
+        [
+            "Slime Finger",
+            "XXIV"
+        ],
+        [
+            "Mulligan",
+            "XV"
+        ],
+        [
+            "Big Sister",
+            "XXIII"
+        ],
+        [
+            "Aqueous Humor",
+            "XVII"
+        ],
+        [
+            "Sadness",
+            "XXIV"
+        ],
+        [
+            "Animate Nightstand",
+            "IX"
+        ],
+        [
+            "Rabbit Punch",
+            "XIX"
+        ],
+        [
+            "Lockjaw",
+            "XVI"
+        ],
+        [
+            "Hastiness",
+            "XXIII"
+        ],
+        [
+            "Clever Fellow",
+            "XI"
+        ],
+        [
+            "History Lesson",
+            "IX"
+        ],
+        [
+            "Braingate",
+            "VI"
+        ],
+        [
+            "Vitreous Humor",
+            "XI"
+        ],
+        [
+            "Cone of Paste",
+            "XVII"
+        ],
+        [
+            "Curse Name",
+            "XI"
+        ],
+        [
+            "Holy Batpole",
+            "XIX"
+        ],
+        [
+            "Summon a Bitch",
+            "XII"
+        ],
+        [
+            "Tumor (Benign)",
+            "X"
+        ],
+        [
+            "Nonplus",
+            "XV"
+        ],
+        [
+            "Spectral Oyster",
+            "IV"
+        ],
+        [
+            "Dropsy",
+            "IX"
+        ],
+        [
+            "Astral Miasma",
+            "VII"
+        ],
+        [
+            "Black Idaho",
+            "III"
+        ],
+        [
+            "Roger's Grand Illusion",
+            "IX"
+        ],
+        [
+            "Tumor (Malignant)",
+            "VI"
+        ],
+        [
+            "Angioplasty",
+            "I"
+        ],
+        [
+            "Covet",
+            "VI"
+        ],
+        [
+            "Eye of the Troglodyte",
+            "IV"
+        ],
+        [
+            "Curse Family",
+            "I"
+        ],
+        [
+            "Ursine Armor",
+            "III"
+        ],
+        [
+            "Tonsillectomy",
+            "I"
+        ],
+        [
+            "Holy Roller",
+            "I"
+        ],
+        [
+            "Acrid Hands",
+            "III"
+        ],
+        [
+            "Grognor's Big Day Off",
+            "I"
+        ],
+        [
+            "Animate Tunic",
+            "II"
+        ]
+    ],
+    "act": 5,
+    "bestplot": "Act V",
+    "Quests": [
+        "Fetch me a writ",
+        "Fetch me a letter",
+        "Exterminate the Purple Worms",
+        "Deliver this sock",
+        "Fetch me a dirtclod",
+        "Seek the Garlanded Brocade",
+        "Exterminate the Ankylosauri",
+        "Deliver this lunchpail",
+        "Exterminate the Tyrannosaurus Rexes",
+        "Deliver this cookie",
+        "Seek the Ormolu Hood",
+        "Deliver this toothpick",
+        "Deliver this egg",
+        "Placate the Storm Giants",
+        "Deliver this carrot",
+        "Placate the Hell Hounds",
+        "Seek the Legendary Arrow",
+        "Deliver this carrot",
+        "Seek the Gleaming Tome",
+        "Fetch me a bucket",
+        "Deliver this canoe",
+        "Fetch me a counterpane",
+        "Exterminate the Satyrs",
+        "Deliver this bunny",
+        "Deliver this sock",
+        "Placate the Ice Devils",
+        "Deliver this cookie",
+        "Exterminate the Jellyrocks",
+        "Deliver this sock",
+        "Placate the Cardboard Golems",
+        "Placate the Copper Dragons",
+        "Exterminate the Black Puddings",
+        "Seek the Iron Gemstone",
+        "Deliver this plank",
+        "Placate the Trappers",
+        "Placate the Boy Scouts",
+        "Deliver this casket",
+        "Exterminate the Trappers",
+        "Exterminate the Mariliths",
+        "Placate the Beige Dragons",
+        "Exterminate the Mariliths",
+        "Placate the Manticores",
+        "Deliver this axle",
+        "Seek the Ormolu Hood",
+        "Placate the Sea Elves",
+        "Fetch me a cookie",
+        "Fetch me a towel",
+        "Placate the Barbed Devils",
+        "Placate the Hezrous",
+        "Seek the Gleaming Brocade",
+        "Deliver this tuppence",
+        "Fetch me a trowel",
+        "Seek the One True Gimcrack",
+        "Deliver this nail",
+        "Seek the Benevolent Brooch",
+        "Placate the Iron Peasants",
+        "Exterminate the Liches",
+        "Exterminate the Frost Giants",
+        "Placate the Uruks",
+        "Fetch me an axle",
+        "Fetch me a coin",
+        "Seek the Precious Bijou",
+        "Seek the Dual Spangle",
+        "Deliver this ladder",
+        "Deliver this twig",
+        "Placate the Piercers",
+        "Seek the Crystalline Ankh",
+        "Fetch me a newspaper",
+        "Fetch me a hoe",
+        "Placate the Unicorns",
+        "Seek the Austere Garnet",
+        "Deliver this writ",
+        "Exterminate the Platinum Dragons",
+        "Placate the Mastodons",
+        "Fetch me a casket",
+        "Placate the Koalas",
+        "Exterminate the Fire Giants",
+        "Deliver this ladder",
+        "Deliver this bunny",
+        "Fetch me a rock",
+        "Exterminate the Dragon Turtles",
+        "Seek the Filigreed Brazier",
+        "Fetch me a counterpane",
+        "Seek the Precious Diadem",
+        "Deliver this coin",
+        "Placate the Porcelain Giants",
+        "Seek the Puissant Festoon",
+        "Seek the Benevolent Lens",
+        "Exterminate the Remorhazs",
+        "Deliver this dirtclod",
+        "Placate the Jubilexes",
+        "Deliver this bandage",
+        "Placate the Black Puddings",
+        "Seek the Garlanded Tiara",
+        "Fetch me a sock",
+        "Exterminate the Chromatic Dragons",
+        "Fetch me a towel",
+        "Seek the Dual Tome",
+        "Seek the Cruciate Galoon",
+        "Placate the Ankylosauri"
+    ],
+    "questmonster": "",
+    "kill": "Executing 4 sick Porn Elementals...",
+    "ExpBar": {
+        "position": 3110.1170000000084,
+        "max": 29310,
+        "percent": 10.0,
+        "remaining": 26199,
+        "time": "7.0 hours",
+        "hint": "26199 XP needed for next level"
+    },
+    "EncumBar": {
+        "position": 76,
+        "max": 177,
+        "percent": 42,
+        "remaining": 101,
+        "time": "101 seconds",
+        "hint": "76/177 cubits"
+    },
+    "PlotBar": {
+        "position": 47580.30299999878,
+        "max": 93600,
+        "percent": 50.0,
+        "remaining": 46019,
+        "time": "12.0 hours",
+        "hint": "12.0 hours remaining"
+    },
+    "QuestBar": {
+        "position": 27.68,
+        "max": 120,
+        "percent": 23.0,
+        "remaining": 92,
+        "time": "92.32 seconds",
+        "hint": "23% complete"
+    },
+    "TaskBar": {
+        "position": 5454,
+        "max": 5454,
+        "percent": 100,
+        "remaining": 0,
+        "time": "0 seconds",
+        "hint": "100%"
+    },
+    "queue": [],
+    "date": "Mon Dec 05 2022 20:11:46 GMT+0800 (Malaysia Time)",
+    "stamp": 1670242306557,
+    "online": {
+        "realm": "Alpaquil",
+        "host": "http://progressquest.com/alpaquil.php?",
+        "passkey": 1529873859
+    },
+    "saveName": "Upniem [Alpaquil]",
+    "bestspell": "Holy Batpole XIX",
+    "questmonsterindex": 66,
+    "bestquest": "Placate the Ankylosauri",
+    "guild": "redteam",
+    "motto": "I'll idle until the universe ends"
+}
