@@ -1,0 +1,184 @@
+{
+  "Traits": {
+    "Name": "Whazvaeb",
+    "Race": "Eel Man",
+    "Class": "Shiv-Knight",
+    "Level": 2
+  },
+  "dna": [
+    0.8248155270703137,
+    0.2868621479719877,
+    0.19357191678136587,
+    1043823
+  ],
+  "seed": [
+    0.9537109395023435,
+    0.6678585482295603,
+    0.39069510740228,
+    914839
+  ],
+  "birthday": "Wed Dec 07 2022 22:23:07 GMT+0800 (Malaysia Time)",
+  "birthstamp": 1670422987629,
+  "Stats": {
+    "seed": [
+      0.8248155270703137,
+      0.2868621479719877,
+      0.19357191678136587,
+      1043823
+    ],
+    "STR": 10,
+    "best": "DEX",
+    "CON": 12,
+    "DEX": 16,
+    "INT": 13,
+    "WIS": 11,
+    "CHA": 16,
+    "HP Max": 14,
+    "MP Max": 13
+  },
+  "beststat": "DEX 16",
+  "task": "sell",
+  "tasks": 548,
+  "elapsed": 2339,
+  "bestequip": "-1 Burlap Cuisses",
+  "Equips": {
+    "Weapon": "+1 Stick",
+    "Shield": "Gilded Parasol",
+    "Helm": "Lace",
+    "Hauberk": "Plastic Flannel",
+    "Brassairts": "",
+    "Vambraces": "-2 Burlap",
+    "Gauntlets": "Macrame",
+    "Gambeson": "-1 Macrame",
+    "Cuisses": "-1 Burlap",
+    "Greaves": "Macrame",
+    "Sollerets": ""
+  },
+  "Inventory": [
+    [
+      "Gold",
+      11
+    ],
+    [
+      "troglodyte tail",
+      1
+    ],
+    [
+      "lizard man tail",
+      1
+    ],
+    [
+      "uruk boot",
+      1
+    ],
+    [
+      "shrieker stalk",
+      1
+    ],
+    [
+      "mini giant pompadour",
+      1
+    ],
+    [
+      "violet fungi spore",
+      1
+    ],
+    [
+      "caveman club",
+      1
+    ],
+    [
+      "mermaid gills",
+      1
+    ],
+    [
+      "lemure blob",
+      1
+    ],
+    [
+      "wolf paw",
+      1
+    ],
+    [
+      "Proverbial Talisman of Cruelty",
+      1
+    ],
+    [
+      "koala heart",
+      1
+    ],
+    [
+      "cub scout neckerchief",
+      1
+    ],
+    [
+      "iron peasant chaff",
+      1
+    ],
+    [
+      "stun worm trode",
+      1
+    ]
+  ],
+  "Spells": [],
+  "act": 1,
+  "bestplot": "Act I",
+  "Quests": [
+    "Placate the Treants",
+    "Placate the Goblins",
+    "Placate the Morkoths",
+    "Fetch me a counterpane",
+    "Exterminate the Pixies",
+    "Fetch me a nosegay",
+    "Deliver self pint"
+  ],
+  "questmonster": "",
+  "kill": "Selling a troglodyte tail...",
+  "ExpBar": {
+    "position": 642.0,
+    "max": 2400,
+    "percent": 26.0,
+    "remaining": 1758,
+    "time": "29.0 minutes",
+    "hint": "1758 XP needed for next level"
+  },
+  "EncumBar": {
+    "position": 15,
+    "max": 20,
+    "percent": 75,
+    "remaining": 5,
+    "time": "5 seconds",
+    "hint": "15/20 cubits"
+  },
+  "PlotBar": {
+    "position": 1926.0,
+    "max": 21600,
+    "percent": 8.0,
+    "remaining": 19674,
+    "time": "5.0 hours",
+    "hint": "5.0 hours remaining"
+  },
+  "QuestBar": {
+    "position": 72.0,
+    "max": 265,
+    "percent": 27.0,
+    "remaining": 193,
+    "time": "3.0 minutes",
+    "hint": "27% complete"
+  },
+  "TaskBar": {
+    "position": 725,
+    "max": 1000,
+    "percent": 72,
+    "remaining": 275,
+    "time": "4 minutes",
+    "hint": "72%"
+  },
+  "queue": [],
+  "date": "Wed Dec 07 2022 22:23:08 GMT+0800 (Malaysia Time)",
+  "stamp": 1670422988682,
+  "saveName": "Whazvaeb",
+  "bestspell": "",
+  "bestquest": "Deliver self pint",
+  "questmonsterindex": 170
+}

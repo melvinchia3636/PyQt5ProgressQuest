@@ -183,7 +183,6 @@ class Gui:
                 1, QtWidgets.QHeaderView.ResizeToContents)
 
     def setupUi(self, progressQuest):
-        progressQuest.setWindowTitle("Progress Quest - Upniem")
         progressQuest.setWindowIcon(QtGui.QIcon("pq.png"))
         progressQuest.resize(1005, 596)
 

@@ -1,9 +1,11 @@
 import math
+import json
 from .utils import *
 from .conf import conf
 
 randseed = conf.randseed
 LevelUpTime = conf.LevelUpTime
+
 
 class Core:
     def __init__(self):
@@ -220,15 +222,18 @@ class Core:
         if list.fixedkeys:
             self.game[list.id][key] = value
         else:
-            i = 0
-            still = True
-            for i in range(len(self.game[list.id])):
+            i = 0;
+            while i < len(self.game[list.id]):
+
                 if self.game[list.id][i][0] == key:
-                    self.game[list.id][i][1] = value
-                    still = False
-                    break
-            if still and i == len(self.game[list.id]) - 1:
-                self.game[list.id].append([key, value])
+                    self.game[list.id][i][1] = value;
+                    break;
+
+                i += 1
+                
+
+            if i == len(self.game[list.id]):
+                self.game[list.id].append([key,value]);
 
         list.PutUI(key, value)
 
@@ -457,6 +462,8 @@ class Core:
         for i in [self.Plots, self.Quests]:
             i.CheckAll(True)
 
+        self.setWindowTitle("Progress Quest - " + self.game["Traits"]["Name"])
+
     def Progress(self):
         if self.TaskBar.done():
             self.game["tasks"] += 1
@@ -496,3 +503,26 @@ class Core:
             self.TaskBar.increment(elapsed)
 
         self.lasttick = timeGetTime()
+
+    def HotOrNot(self):
+        if self.Spells.length():
+            flat = 1
+            best = 0, i
+
+            for i in range(1, self.Spells.length()):
+                if ((i+flat) * toArabic(self.Get(self.Spells, i)) >
+                        (best+flat) * toArabic(self.Get(self.Spells, best))):
+                    best = i
+
+            self.game["bestspell"] = self.Spells.label(
+                best) + ' ' + self.Get(self.Spells, best)
+        else:
+            self.game["bestspell"] = ''
+
+    def SaveGame(self):
+        self.HotOrNot()
+
+        self.game["seed"] = list(randseed())
+        json.dump(self.game, open(self.savePath, 'w'), indent=2)
+
+
