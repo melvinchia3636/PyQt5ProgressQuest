@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import QTableWidget, QAbstractItemView, QTableWidgetItem
 
-
 class TableBox(QTableWidget):
     def __init__(self, id, columns, fixedkeys=None):
         super(TableBox, self).__init__()
@@ -70,7 +69,7 @@ class TableBox(QTableWidget):
 
         if type(self.game[self.id]) is dict:
             for key, value in self.game[self.id].items():
-                if key != "seed":
+                if key[0].isupper():
                     self.PutUI(key, value)
 
     def label(self, n):

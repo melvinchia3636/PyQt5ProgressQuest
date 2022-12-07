@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QListWidget, QListWidgetItem, QAbstractItemView
 from PyQt5.QtCore import Qt
 
-from utils import toRoman
+from core.utils import toRoman
 
 class ListBox(QListWidget):
     def __init__(self, id, columns, fixedkeys=None):
