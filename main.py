@@ -1,9 +1,5 @@
-# TODO: character creation
-# TODO: main menu
-
 import json
 import sys
-from datetime import datetime
 from PyQt5 import QtCore, QtWidgets
 
 from core.game.utils import *
@@ -19,6 +15,35 @@ from start import UIStartInterface
 randseed = conf.randseed
 LevelUpTime = conf.LevelUpTime
 GenerateName = conf.GenerateName
+
+class StartMenu(QtWidgets.QWidget, UIStartInterface):
+    def __init__(self):
+        super(StartMenu, self).__init__()
+        self.setupUi(self)
+
+        self.newGameButton.clicked.connect(self.newGame)
+        self.loadGameButton.clicked.connect(self.loadGame)
+        self.exitButton.clicked.connect(self.close)
+
+    def loadGame(self):
+        savePath, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", "", "JSON Files (*.json)")
+        if savePath:
+            playWindow.startGame(savePath)
+
+    def newGame(self):
+        soldWindow.show()
+        self.hide()
+
+class SoldMenu(QtWidgets.QWidget, CoreSold, UISold):
+    def __init__(self):
+        super(SoldMenu, self).__init__()
+
+        self.setupUi(self, playWindow)
+        self.RollEm()
+
+    def closeEvent(self, event):
+        startWindow.show()
+        event.accept()
 
 class Main(QtWidgets.QWidget, Core, Gui):
     def __init__(self):
@@ -62,35 +87,6 @@ class Main(QtWidgets.QWidget, Core, Gui):
     def closeEvent(self, event):
         self.SaveGame()
         QtWidgets.QMessageBox.information(self, "Saved", "Game saved as " + self.savePath)
-        event.accept()
-
-class StartMenu(QtWidgets.QWidget, UIStartInterface):
-    def __init__(self):
-        super(StartMenu, self).__init__()
-        self.setupUi(self)
-
-        self.newGameButton.clicked.connect(self.newGame)
-        self.loadGameButton.clicked.connect(self.loadGame)
-        self.exitButton.clicked.connect(self.close)
-
-    def loadGame(self):
-        savePath, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", "", "JSON Files (*.json)")
-        if savePath:
-            playWindow.startGame(savePath)
-
-    def newGame(self):
-        soldWindow.show()
-        self.hide()
-
-class SoldMenu(QtWidgets.QWidget, CoreSold, UISold):
-    def __init__(self):
-        super(SoldMenu, self).__init__()
-
-        self.setupUi(self, playWindow)
-        self.RollEm()
-
-    def closeEvent(self, event):
-        startWindow.show()
         event.accept()
 
 if __name__ == "__main__":
