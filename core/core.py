@@ -2,6 +2,7 @@ import math
 import json
 from .utils import *
 from .conf import conf
+import requests
 
 randseed = conf.randseed
 LevelUpTime = conf.LevelUpTime
@@ -530,5 +531,3 @@ class Core:
 
         self.game["seed"] = list(randseed())
         json.dump(self.game, open(self.savePath, 'w'), indent=2)
-
-
