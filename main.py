@@ -3,7 +3,6 @@ import sys
 from PyQt5 import QtCore, QtWidgets
 
 from core.game.utils import *
-from core.game.conf import conf
 from core.game.gui import Gui
 from core.game.core import Core
 
@@ -11,10 +10,6 @@ from core.sold.gui import UISold
 from core.sold.core import CoreSold
 
 from start import UIStartInterface
-
-randseed = conf.randseed
-LevelUpTime = conf.LevelUpTime
-GenerateName = conf.GenerateName
 
 class StartMenu(QtWidgets.QWidget, UIStartInterface):
     def __init__(self):
