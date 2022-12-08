@@ -2,7 +2,6 @@ import math
 import json
 from .utils import *
 from .conf import conf
-import requests
 
 randseed = conf.randseed
 LevelUpTime = conf.LevelUpTime
