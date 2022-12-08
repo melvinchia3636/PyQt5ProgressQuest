@@ -106,5 +106,5 @@ class CoreSold:
         newguy["Equips"]["Weapon"] = newguy["bestequip"];
         newguy["Equips"]["Hauberk"] = "-3 Burlap";
 
-        json.dump(newguy, open(newguy["Traits"]["Name"]+".json", "w"), indent=4)
-        playWindow.startGame(newguy["Traits"]["Name"]+".json")
+        json.dump(newguy, open(newguy["Traits"]["Name"]+".pq.json", "w"), indent=4)
+        playWindow.startGame(newguy["Traits"]["Name"]+".pq.json")
