@@ -379,6 +379,8 @@ class Core:
         self.game["bestquest"] = caption
         self.Quests.AddUI(caption)
 
+        self.SaveGame()
+
     def CompleteAct(self):
         self.Plots.CheckAll()
         self.game["act"] += 1
@@ -389,6 +391,8 @@ class Core:
         if self.game["act"] > 1:
             self.WinItem()
             self.WinEquip()
+        
+        self.SaveGame()
 
     def Task(self, caption, msec):
         self.game["kill"] = caption + "..."
@@ -444,6 +448,8 @@ class Core:
         self.WinStat()
         self.WinSpell()
         self.ExpBar.reset(LevelUpTime(self.GetI(self.Traits, "Level")))
+
+        self.SaveGame()
 
     def ClearAllSelections(self):
         for item in self.AllLists:
@@ -507,7 +513,7 @@ class Core:
     def HotOrNot(self):
         if self.Spells.length():
             flat = 1
-            best = 0, i
+            best = 0
 
             for i in range(1, self.Spells.length()):
                 if ((i+flat) * toArabic(self.Get(self.Spells, i)) >
