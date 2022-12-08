@@ -12,10 +12,10 @@
     515039
   ],
   "seed": [
-    0.4259076761081815,
-    0.6455479848664254,
-    0.2709055512677878,
-    867704
+    0.9710667717736214,
+    0.5392456222325563,
+    0.4319178871810436,
+    2089013
   ],
   "birthday": "2022-12-08 16:00:03",
   "birthstamp": 1670486403.14029,
@@ -37,15 +37,15 @@
     "MP Max": 24
   },
   "beststat": "CON 17",
-  "task": "heading",
-  "tasks": 4813,
-  "elapsed": 17756,
-  "bestequip": "+1 Canvas Cuisses",
+  "task": "kill|Nymph|3|hanky",
+  "tasks": 4945,
+  "elapsed": 18231,
+  "bestequip": "-3 Leathers Hauberk",
   "Equips": {
     "Weapon": "Leafmace",
     "Shield": "+1 Fender",
     "Helm": "Rusty Leathers",
-    "Hauberk": "+1 Macrame",
+    "Hauberk": "-3 Leathers",
     "Brassairts": "+1 Canvas",
     "Vambraces": "-2 Chamois",
     "Gauntlets": "Flannel",
@@ -57,7 +57,63 @@
   "Inventory": [
     [
       "Gold",
-      146
+      181
+    ],
+    [
+      "anhkheg chitin",
+      1
+    ],
+    [
+      "spectre vestige",
+      1
+    ],
+    [
+      "hogbird curl",
+      1
+    ],
+    [
+      "gold dragon filling",
+      1
+    ],
+    [
+      "ghast vomit",
+      1
+    ],
+    [
+      "quasit tail",
+      1
+    ],
+    [
+      "medusa eye",
+      1
+    ],
+    [
+      "silkie fur",
+      1
+    ],
+    [
+      "gargoyle gravel",
+      1
+    ],
+    [
+      "yeti fur",
+      1
+    ],
+    [
+      "wolog lemma",
+      1
+    ],
+    [
+      "barbed devil flame",
+      1
+    ],
+    [
+      "satyr hoof",
+      1
+    ],
+    [
+      "wight lung",
+      1
     ]
   ],
   "Spells": [
@@ -132,46 +188,46 @@
     "Placate the Owlbears"
   ],
   "questmonster": "",
-  "kill": "Heading to the killing fields...",
+  "kill": "Executing a Battle-Nymph...",
   "ExpBar": {
-    "position": 2801.999999999998,
+    "position": 3213.6000000000004,
     "max": 6000,
-    "percent": 46.0,
-    "remaining": 3198,
-    "time": "53.0 minutes",
-    "hint": "3198 XP needed for next level"
+    "percent": 53.0,
+    "remaining": 2786,
+    "time": "46.0 minutes",
+    "hint": "2786 XP needed for next level"
   },
   "EncumBar": {
-    "position": 0,
+    "position": 14,
     "max": 28,
-    "percent": 0,
-    "remaining": 28,
-    "time": "28 seconds",
-    "hint": "0/28 cubits"
+    "percent": 50,
+    "remaining": 14,
+    "time": "14 seconds",
+    "hint": "14/28 cubits"
   },
   "PlotBar": {
-    "position": 14831.999999999993,
+    "position": 15243.599999999984,
     "max": 21600,
-    "percent": 68.0,
-    "remaining": 6768,
-    "time": "112.0 minutes",
-    "hint": "112.0 minutes remaining"
+    "percent": 70.0,
+    "remaining": 6356,
+    "time": "105.0 minutes",
+    "hint": "105.0 minutes remaining"
   },
   "QuestBar": {
-    "position": 352.79999999999995,
+    "position": 764.3999999999994,
     "max": 946,
-    "percent": 37.0,
-    "remaining": 593,
-    "time": "9.0 minutes",
-    "hint": "37% complete"
+    "percent": 80.0,
+    "remaining": 181,
+    "time": "3.0 minutes",
+    "hint": "80% complete"
   },
   "TaskBar": {
-    "position": 3252,
-    "max": 4000,
-    "percent": 81,
-    "remaining": 748,
-    "time": "12 minutes",
-    "hint": "81%"
+    "position": 3793,
+    "max": 4800,
+    "percent": 79,
+    "remaining": 1007,
+    "time": "16 minutes",
+    "hint": "79%"
   },
   "queue": [],
   "date": "2022-12-08 16:00:03",
