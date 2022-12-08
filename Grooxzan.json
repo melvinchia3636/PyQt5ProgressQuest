@@ -3,7 +3,7 @@
     "Name": "Grooxzan",
     "Race": "Land Squid",
     "Class": "Vermineer",
-    "Level": 1
+    "Level": 5
   },
   "dna": [
     0.47357441298663616,
@@ -12,10 +12,10 @@
     515039
   ],
   "seed": [
-    0.840048092417419,
-    0.30001215636730194,
-    0.05463811941444874,
-    1188232
+    0.4259076761081815,
+    0.6455479848664254,
+    0.2709055512677878,
+    867704
   ],
   "birthday": "2022-12-08 16:00:03",
   "birthstamp": 1670486403.14029,
@@ -26,96 +26,157 @@
       0.01863071694970131,
       515039
     ],
-    "STR": 14,
+    "STR": 18,
     "best": "CON",
     "CON": 17,
-    "DEX": 14,
+    "DEX": 16,
     "INT": 11,
     "WIS": 14,
-    "CHA": 8,
-    "HP Max": 8,
-    "MP Max": 3
+    "CHA": 10,
+    "HP Max": 39,
+    "MP Max": 24
   },
   "beststat": "CON 17",
-  "task": "kill|Merman|1|trident",
-  "tasks": 9,
-  "elapsed": 48,
-  "bestequip": "Sharp Rock",
+  "task": "heading",
+  "tasks": 4813,
+  "elapsed": 17756,
+  "bestequip": "+1 Canvas Cuisses",
   "Equips": {
-    "Weapon": "Sharp Rock",
-    "Shield": "",
-    "Helm": "",
-    "Hauberk": "-3 Burlap",
-    "Brassairts": "",
-    "Vambraces": "",
-    "Gauntlets": "",
-    "Gambeson": "",
-    "Cuisses": "",
-    "Greaves": "",
-    "Sollerets": ""
+    "Weapon": "Leafmace",
+    "Shield": "+1 Fender",
+    "Helm": "Rusty Leathers",
+    "Hauberk": "+1 Macrame",
+    "Brassairts": "+1 Canvas",
+    "Vambraces": "-2 Chamois",
+    "Gauntlets": "Flannel",
+    "Gambeson": "-3 Torn Holey Scale Mail",
+    "Cuisses": "+1 Canvas",
+    "Greaves": "Flannel",
+    "Sollerets": "-1 Chamois"
   },
   "Inventory": [
     [
       "Gold",
-      0
-    ],
-    [
-      "caveman club",
-      1
+      146
     ]
   ],
-  "Spells": [],
+  "Spells": [
+    [
+      "Hastiness",
+      "II"
+    ],
+    [
+      "Rabbit Punch",
+      "II"
+    ],
+    [
+      "Sadness",
+      "I"
+    ],
+    [
+      "Good Move",
+      "I"
+    ],
+    [
+      "Seasick",
+      "II"
+    ],
+    [
+      "Revolting Cloud",
+      "I"
+    ]
+  ],
   "act": 1,
   "bestplot": "Act I",
   "Quests": [
-    "Exterminate the Girl Scouts"
+    "Exterminate the Girl Scouts",
+    "Fetch me an I.O.U.",
+    "Exterminate the Beagles",
+    "Fetch me a writ",
+    "Deliver self canoe",
+    "Deliver self rock",
+    "Deliver self cookie",
+    "Fetch me an egg",
+    "Deliver self planter box",
+    "Deliver self vest",
+    "Fetch me a plank",
+    "Placate the Porn Elementals",
+    "Placate the Cockatrices",
+    "Placate the Crayfishs",
+    "Exterminate the Green Slimes",
+    "Exterminate the Rats",
+    "Placate the Vampires",
+    "Exterminate the Octopuss",
+    "Fetch me a sock",
+    "Seek the Cruciate Gammel",
+    "Placate the Su-monsters",
+    "Seek the One True Sceptre",
+    "Fetch me a trowel",
+    "Placate the Harpys",
+    "Exterminate the Medusas",
+    "Deliver self credenza",
+    "Placate the Owlbears",
+    "Deliver self twig",
+    "Placate the Gargoyles",
+    "Seek the Blessed Ankh",
+    "Fetch me a canoe",
+    "Placate the Girl Scouts",
+    "Fetch me a writ",
+    "Exterminate the Leucrottas",
+    "Placate the Dragon Turtles",
+    "Seek the Filigreed Sceptre",
+    "Placate the Xorns",
+    "Placate the Eagle Scouts",
+    "Fetch me a counterpane",
+    "Seek the Legendary Corset",
+    "Placate the Owlbears"
   ],
-  "questmonster": "Girl Scout|2|cookie",
-  "kill": "Executing a Merman...",
+  "questmonster": "",
+  "kill": "Heading to the killing fields...",
   "ExpBar": {
-    "position": 12.0,
-    "max": 1200,
-    "percent": 1.0,
-    "remaining": 1188,
-    "time": "19.0 minutes",
-    "hint": "1188 XP needed for next level"
+    "position": 2801.999999999998,
+    "max": 6000,
+    "percent": 46.0,
+    "remaining": 3198,
+    "time": "53.0 minutes",
+    "hint": "3198 XP needed for next level"
   },
   "EncumBar": {
-    "position": 1,
-    "max": 24,
-    "percent": 4,
-    "remaining": 23,
-    "time": "23 seconds",
-    "hint": "1/24 cubits"
+    "position": 0,
+    "max": 28,
+    "percent": 0,
+    "remaining": 28,
+    "time": "28 seconds",
+    "hint": "0/28 cubits"
   },
   "PlotBar": {
-    "position": 6.0,
+    "position": 14831.999999999993,
     "max": 21600,
-    "percent": 0.0,
-    "remaining": 21594,
-    "time": "5.0 hours",
-    "hint": "5.0 hours remaining"
+    "percent": 68.0,
+    "remaining": 6768,
+    "time": "112.0 minutes",
+    "hint": "112.0 minutes remaining"
   },
   "QuestBar": {
-    "position": 0,
-    "max": 272,
-    "percent": 0,
-    "remaining": 272,
-    "time": "4 minutes",
-    "hint": "0% complete"
+    "position": 352.79999999999995,
+    "max": 946,
+    "percent": 37.0,
+    "remaining": 593,
+    "time": "9.0 minutes",
+    "hint": "37% complete"
   },
   "TaskBar": {
-    "position": 6000,
-    "max": 6000,
-    "percent": 100,
-    "remaining": 0,
-    "time": "0 seconds",
-    "hint": "100%"
+    "position": 3252,
+    "max": 4000,
+    "percent": 81,
+    "remaining": 748,
+    "time": "12 minutes",
+    "hint": "81%"
   },
   "queue": [],
   "date": "2022-12-08 16:00:03",
   "stamp": 1670486403.14029,
-  "bestspell": "",
-  "questmonsterindex": 8,
-  "bestquest": "Exterminate the Girl Scouts"
+  "bestspell": "Seasick II",
+  "questmonsterindex": 135,
+  "bestquest": "Placate the Owlbears"
 }

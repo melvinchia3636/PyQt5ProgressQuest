@@ -16,6 +16,7 @@ from sold import Ui_Sold
 
 randseed = conf.randseed
 LevelUpTime = conf.LevelUpTime
+GenerateName = conf.GenerateName
 
 class Main(QtWidgets.QWidget, Core, Gui):
     def __init__(self):
@@ -93,7 +94,8 @@ class SoldMenu(QtWidgets.QWidget, Ui_Sold):
         self.unrollButton.clicked.connect(self.UnrollClick)
         self.soldButton.clicked.connect(self.sold)
         self.cancelButton.clicked.connect(self.close)
-    
+        self.randomNameButton.clicked.connect(lambda: self.nameInput.setText(GenerateName()))
+
     def RerollClick(self):
         self.seedHistory.append(self.stats["seed"]);
         self.RollEm();
