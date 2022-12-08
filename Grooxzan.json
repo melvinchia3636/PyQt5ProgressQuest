@@ -1,0 +1,121 @@
+{
+  "Traits": {
+    "Name": "Grooxzan",
+    "Race": "Land Squid",
+    "Class": "Vermineer",
+    "Level": 1
+  },
+  "dna": [
+    0.47357441298663616,
+    0.7538198898546398,
+    0.01863071694970131,
+    515039
+  ],
+  "seed": [
+    0.840048092417419,
+    0.30001215636730194,
+    0.05463811941444874,
+    1188232
+  ],
+  "birthday": "2022-12-08 16:00:03",
+  "birthstamp": 1670486403.14029,
+  "Stats": {
+    "seed": [
+      0.47357441298663616,
+      0.7538198898546398,
+      0.01863071694970131,
+      515039
+    ],
+    "STR": 14,
+    "best": "CON",
+    "CON": 17,
+    "DEX": 14,
+    "INT": 11,
+    "WIS": 14,
+    "CHA": 8,
+    "HP Max": 8,
+    "MP Max": 3
+  },
+  "beststat": "CON 17",
+  "task": "kill|Merman|1|trident",
+  "tasks": 9,
+  "elapsed": 48,
+  "bestequip": "Sharp Rock",
+  "Equips": {
+    "Weapon": "Sharp Rock",
+    "Shield": "",
+    "Helm": "",
+    "Hauberk": "-3 Burlap",
+    "Brassairts": "",
+    "Vambraces": "",
+    "Gauntlets": "",
+    "Gambeson": "",
+    "Cuisses": "",
+    "Greaves": "",
+    "Sollerets": ""
+  },
+  "Inventory": [
+    [
+      "Gold",
+      0
+    ],
+    [
+      "caveman club",
+      1
+    ]
+  ],
+  "Spells": [],
+  "act": 1,
+  "bestplot": "Act I",
+  "Quests": [
+    "Exterminate the Girl Scouts"
+  ],
+  "questmonster": "Girl Scout|2|cookie",
+  "kill": "Executing a Merman...",
+  "ExpBar": {
+    "position": 12.0,
+    "max": 1200,
+    "percent": 1.0,
+    "remaining": 1188,
+    "time": "19.0 minutes",
+    "hint": "1188 XP needed for next level"
+  },
+  "EncumBar": {
+    "position": 1,
+    "max": 24,
+    "percent": 4,
+    "remaining": 23,
+    "time": "23 seconds",
+    "hint": "1/24 cubits"
+  },
+  "PlotBar": {
+    "position": 6.0,
+    "max": 21600,
+    "percent": 0.0,
+    "remaining": 21594,
+    "time": "5.0 hours",
+    "hint": "5.0 hours remaining"
+  },
+  "QuestBar": {
+    "position": 0,
+    "max": 272,
+    "percent": 0,
+    "remaining": 272,
+    "time": "4 minutes",
+    "hint": "0% complete"
+  },
+  "TaskBar": {
+    "position": 6000,
+    "max": 6000,
+    "percent": 100,
+    "remaining": 0,
+    "time": "0 seconds",
+    "hint": "100%"
+  },
+  "queue": [],
+  "date": "2022-12-08 16:00:03",
+  "stamp": 1670486403.14029,
+  "bestspell": "",
+  "questmonsterindex": 8,
+  "bestquest": "Exterminate the Girl Scouts"
+}

@@ -3,17 +3,19 @@
 
 import json
 import sys
+from datetime import datetime
 from PyQt5 import QtCore, QtWidgets
 
-from core.utils import *
-from core.conf import conf
-from core.gui import Gui
-from core.core import Core
+from core.game.utils import *
+from core.game.conf import conf
+from core.game.gui import Gui
+from core.game.core import Core
 
 from start import Ui_startInterface
 from sold import Ui_Sold
 
 randseed = conf.randseed
+LevelUpTime = conf.LevelUpTime
 
 class Main(QtWidgets.QWidget, Core, Gui):
     def __init__(self):
@@ -81,15 +83,16 @@ class SoldMenu(QtWidgets.QWidget, Ui_Sold):
         super(SoldMenu, self).__init__()
         self.stats = {}
         self.seedHistory = []
+        self.race = None
+        self.klass = None
 
         self.setupUi(self)
         self.RollEm()
 
-        
-
-        self.cancelButton.clicked.connect(self.close)
         self.rollButton.clicked.connect(self.RerollClick)
         self.unrollButton.clicked.connect(self.UnrollClick)
+        self.soldButton.clicked.connect(self.sold)
+        self.cancelButton.clicked.connect(self.close)
     
     def RerollClick(self):
         self.seedHistory.append(self.stats["seed"]);
@@ -125,6 +128,65 @@ class SoldMenu(QtWidgets.QWidget, Ui_Sold):
             self.unrollButton.setEnabled(True)
         else:
             self.unrollButton.setEnabled(False)
+
+    def raceGroupClicked(self, button):
+        self.race = button.text()
+
+    def classGroupClicked(self, button):
+        self.klass = button.text()
+
+    def sold(self):
+        self.stats["seed"] = list(self.stats["seed"])
+        newguy = {
+            "Traits": {},
+            "dna": list(self.stats["seed"]),
+            "seed": list(self.stats["seed"]),
+            "birthday": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "birthstamp": datetime.timestamp(datetime.now()),
+            "Stats": self.stats,
+            "beststat": self.stats["best"] + " " + str(self.stats[self.stats["best"]]),
+            "task": "",
+            "tasks": 0,
+            "elapsed": 0,
+            "bestequip": "Sharp Rock",
+            "Equips": {},
+            "Inventory": [['Gold', 0]],
+            "Spells": [],
+            "act": 0,
+            "bestplot": "Prologue",
+            "Quests": [],
+            "questmonster": "",
+            "kill": "Loading....",
+            "ExpBar": { "position": 0, "max": LevelUpTime(1) },
+            "EncumBar": { "position": 0, "max": self.stats["STR"] + 10 },
+            "PlotBar": { "position": 0, "max": 26 },
+            "QuestBar": { "position": 0, "max": 1 },
+            "TaskBar": { "position": 0, "max": 2000 },
+            "queue": [
+            'task|10|Experiencing an enigmatic and foreboding night vision',
+            "task|6|Much is revealed about that wise old bastard you'd underestimated",
+            'task|6|A shocking series of events leaves you alone and bewildered, but resolute',
+            'task|4|Drawing upon an unrealized reserve of determination, you set out on a long and dangerous journey',
+            'plot|2|Loading'
+            ]
+        };
+
+        newguy["Traits"]["Name"] = self.nameInput.text();
+        newguy["Traits"]["Race"] = self.race
+        newguy["Traits"]["Class"] = self.klass
+        newguy["Traits"]["Level"] = 1;
+
+        newguy["date"] = newguy["birthday"];
+        newguy["stamp"] = newguy["birthstamp"];
+
+        for equip in K.Equips:
+            newguy["Equips"][equip] = '';
+
+        newguy["Equips"]["Weapon"] = newguy["bestequip"];
+        newguy["Equips"]["Hauberk"] = "-3 Burlap";
+
+        json.dump(newguy, open(newguy["Traits"]["Name"]+".json", "w"), indent=4)
+        playWindow.startGame(newguy["Traits"]["Name"]+".json")
 
     def closeEvent(self, event):
         startWindow.show()

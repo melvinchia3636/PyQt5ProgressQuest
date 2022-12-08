@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from core.conf import conf
+from core.game.conf import conf
 
 K = conf.K
 RandomName = conf.GenerateName
@@ -85,6 +85,7 @@ class Ui_Sold(object):
             self.radioButton = QtWidgets.QRadioButton(self.raceGroup)
             self.radioButton.setText(race.split("|")[0])
             self.raceGroupLayout.addWidget(self.radioButton)
+            self.radioButton.toggled.connect(lambda: self.raceGroupClicked(self.radioButton))
             if index == n:
                 self.radioButton.setChecked(True)
 
@@ -93,6 +94,7 @@ class Ui_Sold(object):
             self.radioButton_2 = QtWidgets.QRadioButton(self.classGroup)
             self.radioButton_2.setText(klass.split("|")[0])
             self.classGroupLayout.addWidget(self.radioButton_2)
+            self.radioButton_2.toggled.connect(lambda: self.classGroupClicked(self.radioButton_2))
             if index == n:
                 self.radioButton_2.setChecked(True)
 

@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QProgressBar
 from PyQt5.QtCore import Qt
 
-from core.utils import RoughTime
-from core.conf import conf
+from core.game.utils import RoughTime
+from core.game.conf import conf
 import math
 
 
