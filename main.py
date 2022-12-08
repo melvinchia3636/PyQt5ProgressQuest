@@ -26,7 +26,7 @@ class StartMenu(QtWidgets.QWidget, UIStartInterface):
         self.exitButton.clicked.connect(self.close)
 
     def loadGame(self):
-        savePath, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", "", "JSON Files (*.json)")
+        savePath, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", "", "Press Quest Save File (*.pq.json)")
         if savePath:
             playWindow.startGame(savePath)
 
