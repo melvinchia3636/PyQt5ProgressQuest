@@ -13,10 +13,10 @@ So yeah, let's take the source code, translate it to Python, and make a GUI for 
 ## 🖥 Screenshots
 
 <div>
+  <img width="49%" alt="Screenshot 2022-12-08 at 9 51 41 PM" src="https://user-images.githubusercontent.com/64565584/206469878-7bf88572-9aed-43b9-89bc-d3615eecd400.png">
   <img width="49%" alt="Screenshot 2022-12-08 at 9 51 11 PM" src="https://user-images.githubusercontent.com/64565584/206469799-194e649c-df1c-47b6-9f0f-9af4a5575cfb.png">
   <img width="49%" alt="Screenshot 2022-12-08 at 9 51 21 PM" src="https://user-images.githubusercontent.com/64565584/206469873-fe7f2902-a278-4f71-8248-4a232173ae5c.png">
   <img width="49%" alt="Screenshot 2022-12-08 at 9 51 51 PM" src="https://user-images.githubusercontent.com/64565584/206469887-49aa39cb-f514-47c8-aed6-452b23da53c5.png">
-  <img width="49%" alt="Screenshot 2022-12-08 at 9 51 41 PM" src="https://user-images.githubusercontent.com/64565584/206469878-7bf88572-9aed-43b9-89bc-d3615eecd400.png">
 </div>
 
 ## 🔬 Technologies Used 
