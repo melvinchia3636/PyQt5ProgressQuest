@@ -2,7 +2,7 @@ import webbrowser
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_startInterface(object):
+class UIStartInterface(object):
     def setupUi(self, startInterface):
         startInterface.setObjectName("startInterface")
         startInterface.setWindowModality(QtCore.Qt.NonModal)

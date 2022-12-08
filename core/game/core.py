@@ -6,7 +6,6 @@ from .conf import conf
 randseed = conf.randseed
 LevelUpTime = conf.LevelUpTime
 
-
 class Core:
     def __init__(self):
         self.game = {}

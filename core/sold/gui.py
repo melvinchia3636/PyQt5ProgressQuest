@@ -5,7 +5,7 @@ K = conf.K
 RandomName = conf.GenerateName
 Random = conf.Random
 
-class Ui_Sold(object):
+class UISold:
     def defineWidgets(self, Window):
         self.mainLayout = QtWidgets.QGridLayout(Window)
 
@@ -125,15 +125,23 @@ class Ui_Sold(object):
         self.cancelButton.setText("Cancel")
 
         self.nameInput.setText(RandomName())
+
+    def bindEvents(self, playWindow):
+        self.rollButton.clicked.connect(self.RerollClick)
+        self.unrollButton.clicked.connect(self.UnrollClick)
+        self.soldButton.clicked.connect(lambda: self.sold(playWindow))
+        self.cancelButton.clicked.connect(self.close)
+        self.randomNameButton.clicked.connect(lambda: self.nameInput.setText(RandomName()))
         
 
-    def setupUi(self, Window):
+    def setupUi(self, Window, playWindow):
         Window.setFixedSize(600, 580)
 
         self.defineWidgets(Window)
         self.addWidgets()
         self.setSizesAndSpacing()
         self.setWidgetText(Window)
+        self.bindEvents(playWindow)
 
         QtCore.QMetaObject.connectSlotsByName(Window)
 
