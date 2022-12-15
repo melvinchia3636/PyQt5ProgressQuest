@@ -38,23 +38,28 @@ def toRoman(n):
     if (n < 0):
         s = "-"
         n = -n
+    while _rome(10000, 'T'): 
+        ...
+    _rome(9000, 'MT')
+    _rome(5000, 'A')
+    _rome(4000, 'MA')
 
-    while (_rome(1000, "M")):
+    while _rome(1000, "M"):
         ...
     _rome(900, "CM")
     _rome(500, "D")
     _rome(400, "CD")
-    while (_rome(100, "C")):
+    while _rome(100, "C"):
         ...
     _rome(90, "XC")
     _rome(50, "L")
     _rome(40, "XL")
-    while (_rome(10, "X")):
+    while _rome(10, "X"):
         ...
     _rome(9, "IX")
     _rome(5, "V")
     _rome(4, "IV")
-    while (_rome(1, "I")):
+    while _rome(1, "I"):
         ...
     return s
 
@@ -71,6 +76,12 @@ def toArabic(s):
         s = s[len(ds):]
         n += dn
         return True
+    
+    while _arab(10000, 'T'): 
+        ...
+    _arab(9000, 'MT')
+    _arab(5000, 'A')
+    _arab(4000, 'MA')
 
     while (_arab("M", 1000)):
         ...
