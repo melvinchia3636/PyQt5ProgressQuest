@@ -111,18 +111,18 @@ class UISold:
     def setWidgetText(self, Window):
         Window.setWindowTitle("New Character")
 
-        self.raceGroup.setTitle("Race")
-        self.classGroup.setTitle("Class")
-        self.statsGroup.setTitle("Stats")
+        self.raceGroup.setTitle("种族")
+        self.classGroup.setTitle("职业")
+        self.statsGroup.setTitle("属性")
 
-        self.label.setText("Name")
+        self.label.setText("姓名")
         self.randomNameButton.setText("?")
 
-        self.totalInputLabel.setText("Total")
-        self.rollButton.setText("Roll")
-        self.unrollButton.setText("Unroll")
-        self.soldButton.setText("Sold!")
-        self.cancelButton.setText("Cancel")
+        self.totalInputLabel.setText("合计")
+        self.rollButton.setText("随机")
+        self.unrollButton.setText("重置")
+        self.soldButton.setText("创建")
+        self.cancelButton.setText("取消")
 
         self.nameInput.setText(RandomName())
 

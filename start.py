@@ -69,10 +69,10 @@ class UIStartInterface(object):
 
     def retranslateUi(self, startInterface):
         _translate = QtCore.QCoreApplication.translate
-        startInterface.setWindowTitle(_translate("startInterface", "Progress Quest"))
-        self.newGameButton.setText(_translate("startInterface", "New Game"))
-        self.loadGameButton.setText(_translate("startInterface", "Load Game"))
-        self.exitButton.setText(_translate("startInterface", "Exit"))
+        startInterface.setWindowTitle(_translate("startInterface", "进度冒险"))
+        self.newGameButton.setText(_translate("startInterface", "新游戏"))
+        self.loadGameButton.setText(_translate("startInterface", "加载游戏"))
+        self.exitButton.setText(_translate("startInterface", "退出"))
         self.websiteLink.setText(_translate("startInterface", "http://progressquest.com"))
         self.projectInfoLabel.setText(_translate("startInterface", "Recreated by Melvin Chia using PyQt5. Project under MIT License."))
 

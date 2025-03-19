@@ -28,7 +28,10 @@ So yeah, let's take the source code, translate it to Python, and make a GUI for 
 
 If you want to run the website on your local machine:
 1. Clone the repository: `git clone https://github.com/melvinchia3636/PyQt5ProgressQuest`.
-3. Download `pyqt5`, `js2py` using `pip`
+3. Download dependencies using Tsinghua mirror:
+   ```
+   pip install -r requirements.txt
+   ```
 4. Run `python3 main.py`
 
 ## 📈 Status
