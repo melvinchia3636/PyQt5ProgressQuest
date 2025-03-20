@@ -21,7 +21,7 @@ class StartMenu(QtWidgets.QWidget, UIStartInterface):
         self.exitButton.clicked.connect(self.close)
 
     def loadGame(self):
-        savePath, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", "", "Press Quest Save File (*.pq.json)")
+        savePath, _ = QtWidgets.QFileDialog.getOpenFileName(self, "打开文件", "save", "Press Quest Save File (*.pq.json)")
         if savePath:
             playWindow.startGame(savePath)
 
@@ -63,7 +63,7 @@ class Main(QtWidgets.QWidget, Core, Gui):
                 content = json.load(f)
             
         except:
-            QtWidgets.QMessageBox.critical(self, "Error", "Could not load game from " + path)
+            QtWidgets.QMessageBox.critical(self, "错误", "Could not load game from " + path)
             startWindow.show()
             return
 
@@ -81,7 +81,7 @@ class Main(QtWidgets.QWidget, Core, Gui):
 
     def closeEvent(self, event):
         self.SaveGame()
-        QtWidgets.QMessageBox.information(self, "Saved", "Game saved as " + self.savePath)
+        QtWidgets.QMessageBox.information(self, "已保存", "Game saved as " + self.savePath)
         event.accept()
 
 if __name__ == "__main__":

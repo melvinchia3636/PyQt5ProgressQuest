@@ -1,8 +1,8 @@
 from components import ProgressBar, TableBox, ListBox
 from PyQt5 import QtCore, QtGui, QtWidgets
-from .conf import conf
-
-K = conf.K
+import json
+with open('core/game/config.json', encoding='utf-8') as f:
+    K = json.load(f)
 
 class Gui:
     def defineComponents(self, progressQuest):
@@ -23,11 +23,11 @@ class Gui:
         self.Kill = QtWidgets.QLabel(progressQuest)
 
         self.Traits = TableBox(
-            "Traits", 2, K["Traits"])
+            "特征", 2, K["特征"])
         self.Stats = TableBox(
-            "Stats", 2, K["Stats"])
+            "属性", 2, K["属性"])
         self.Spells = TableBox("Spells", 2)
-        self.Equips = TableBox("Equips", 2, K["Equips"])
+        self.Equips = TableBox("装备", 2, K["装备"])
         self.Inventory = TableBox("Inventory", 2)
 
         self.Quests = ListBox("Quests", 1)

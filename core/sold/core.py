@@ -1,9 +1,11 @@
-from core.game.conf import conf
+import json
 from PyQt5 import QtWidgets
 from datetime import datetime
-import json
+import os
+from core.game.conf import conf
 
-K = conf.K
+with open('core/game/config.json', encoding='utf-8') as f:
+    K = json.load(f)
 randseed = conf.randseed
 Random = conf.Random
 LevelUpTime = conf.LevelUpTime
@@ -31,15 +33,15 @@ class CoreSold:
         self.stats["seed"] = randseed()
         total = 0
         best = -1
-        for this in K.PrimeStats:
+        for this in K["PrimeStats"]:
             total += self.Roll(this)
             if best < self.stats[this]:
                 best = self.stats[this]
                 self.stats["best"] = this
             self.findChild(QtWidgets.QLineEdit, this).setText(str(self.stats[this]))
             
-        self.stats['HP Max'] = Random(8) + self.stats["CON"] // 6
-        self.stats['MP Max'] = Random(8) + self.stats["INT"] // 6
+        self.stats['最大生命值'] = Random(8) + self.stats["体质"] // 6
+        self.stats['最大魔法值'] = Random(8) + self.stats["智力"] // 6
 
         color = "red" if total >= (63+18) else "yellow" if total > (4 * 18) else "grey" if total <= (63-18) else "silver" if total < (3 * 18) else "white"
         self.totalInput.setText(str(total))
@@ -59,52 +61,57 @@ class CoreSold:
     def sold(self, playWindow):
         self.stats["seed"] = list(self.stats["seed"])
         newguy = {
-            "Traits": {},
+            "特征": {},
             "dna": list(self.stats["seed"]),
             "seed": list(self.stats["seed"]),
             "birthday": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "birthstamp": datetime.timestamp(datetime.now()),
-            "Stats": self.stats,
+            "属性": self.stats,
             "beststat": self.stats["best"] + " " + str(self.stats[self.stats["best"]]),
             "task": "",
             "tasks": 0,
             "elapsed": 0,
-            "bestequip": "Sharp Rock",
-            "Equips": {},
-            "Inventory": [['Gold', 0]],
+            "bestequip": "锋利的石块",
+            "装备": {},
+            "Inventory": [['金币', 0]],
             "Spells": [],
-            "act": 0,
-            "bestplot": "Prologue",
+            "章节": 0,
+            "bestplot": "序言",
             "Quests": [],
             "questmonster": "",
-            "kill": "Loading....",
+            "kill": "加载中....",
             "ExpBar": { "position": 0, "max": LevelUpTime(1) },
-            "EncumBar": { "position": 0, "max": self.stats["STR"] + 10 },
+            "EncumBar": { "position": 0, "max": self.stats["力量"] + 10 },
             "PlotBar": { "position": 0, "max": 26 },
             "QuestBar": { "position": 0, "max": 1 },
             "TaskBar": { "position": 0, "max": 2000 },
             "queue": [
-            'task|10|Experiencing an enigmatic and foreboding night vision',
-            "task|6|Much is revealed about that wise old bastard you'd underestimated",
-            'task|6|A shocking series of events leaves you alone and bewildered, but resolute',
-            'task|4|Drawing upon an unrealized reserve of determination, you set out on a long and dangerous journey',
-            'plot|2|Loading'
+            'task|10|经历着一段神秘莫测且令人心生恐惧的夜间幻象',
+            "task|6|关于那个你曾低估了的聪明的老家伙，很多事情都真相大白了",
+            'task|6|一连串令人震惊的事件让你陷入了孤立无援且困惑不已的境地，但你依然坚定不屈',
+            'task|4|凭借着一股此前未曾发觉的坚定决心，你踏上了一段漫长而危险的旅程',
+            'plot|2|加载中'
             ]
         };
 
-        newguy["Traits"]["Name"] = self.nameInput.text();
-        newguy["Traits"]["Race"] = self.race
-        newguy["Traits"]["Class"] = self.klass
-        newguy["Traits"]["Level"] = 1;
+        newguy["特征"]["名字"] = self.nameInput.text();
+        newguy["特征"]["种族"] = self.race
+        newguy["特征"]["职业"] = self.klass
+        newguy["特征"]["等级"] = 1;
 
         newguy["date"] = newguy["birthday"];
         newguy["stamp"] = newguy["birthstamp"];
 
-        for equip in K.Equips:
-            newguy["Equips"][equip] = '';
+        for equip in K["装备"]:
+            newguy["装备"][equip] = '';
 
-        newguy["Equips"]["Weapon"] = newguy["bestequip"];
-        newguy["Equips"]["Hauberk"] = "-3 Burlap";
+        newguy["装备"]["武器"] = newguy["bestequip"];
+        newguy["装备"]["铠甲"] = "-3 粗麻布衣";
 
-        json.dump(newguy, open(newguy["Traits"]["Name"]+".pq.json", "w"), indent=4)
-        playWindow.startGame(newguy["Traits"]["Name"]+".pq.json")
+        save_dir = 'save'
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
+        filename = newguy["特征"]["名字"]+".pq.json"
+        save_path = os.path.join(save_dir, filename)
+        json.dump(newguy, open(save_path, "w"), indent=4)
+        playWindow.startGame(save_path)

@@ -44,8 +44,8 @@ class ListBox(QListWidget):
         self.game = game
 
         if self.id == "Plots":
-            for i in range(max([0, self.game["act"]-99]), self.game["act"] + 1):
-                self.AddUI(('Act ' + toRoman(i)) if i else "Prologue")
+            for i in range(max([0, self.game["章节"]-99]), self.game["章节"] + 1):
+                self.AddUI(('第' + toRoman(i) + '章') if i else "序章")
         else:
             for item in self.game[self.id]:
                 self.AddUI(item)

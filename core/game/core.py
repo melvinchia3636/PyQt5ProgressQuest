@@ -1,7 +1,10 @@
 import math
 import json
+import os
 from .utils import *
-from .conf import conf
+
+with open('core/game/config.json', encoding='utf-8') as f:
+    K = json.load(f)
 
 randseed = conf.randseed
 LevelUpTime = conf.LevelUpTime
@@ -35,7 +38,7 @@ class Core:
                     self.Inventory.remove1()
                     self.Add(self.Inventory, 'Gold', amt)
 
-                if self.Inventory.length() > 1:
+                if len(self.Inventory) > 1:
                     self.Inventory.scrollToTop()
                     self.Task('Selling ' + Indefinite(self.Inventory.label(1), self.GetI(self.Inventory, 1)),
                               1 * 1000)
@@ -58,15 +61,15 @@ class Core:
                     raise 'bah!' + a
 
             elif (self.EncumBar.done()):
-                self.Task('Heading to market to sell loot', 4 * 1000)
+                self.Task('前往集市去售卖战利品', 4 * 1000)
                 self.game["task"] = 'market'
             elif (Pos('kill|', old) <= 0) and (old != 'heading'):
                 if self.GetI(self.Inventory, 'Gold') > self.EquipPrice():
                     self.Task(
-                        'Negotiating purchase of better equipment', 5 * 1000)
+                        '正在协商购买更好的装备', 5 * 1000)
                     self.game["task"] = 'buying'
                 else:
-                    self.Task('Heading to the killing fields', 4 * 1000)
+                    self.Task('正前往那片杀戮之地', 4 * 1000)
                     self.game["task"] = 'heading'
             else:
                 nn = self.GetI(self.Traits, 'Level')
@@ -74,7 +77,7 @@ class Core:
                 InventoryLabelAlsoGameStyleTag = 3
                 nn = math.floor(
                     (2 * InventoryLabelAlsoGameStyleTag * t['level'] * 1000) / nn)
-                self.Task('Executing ' + t['description'], nn)
+                self.Task('消灭' + t['description'], nn)
 
     def Q(self, s):
         self.game['queue'].append(s)
@@ -103,15 +106,15 @@ class Core:
 
                 if s % 3 == 1:
                     self.Q("task|2|" + nemesis +
-                           " seems to have the upper hand")
+                           "似乎占据上风")
 
                 if s % 3 == 2:
                     self.Q("task|2|You seem to gain the advantage over " + nemesis)
 
             self.Q(
-                "task|3|Victory! " +
+                "task|3|胜利！" +
                 nemesis +
-                " is slain! Exhausted, you lose conciousness"
+                "被击杀！精疲力尽的你失去意识"
             )
             self.Q("task|2|You awake in a friendly place, but the road awaits")
 
@@ -149,7 +152,7 @@ class Core:
         if Odds(1, 25):
             monster = " " + Split(Pick(K["Races"]), 0)
             if Odds(1, 2):
-                monster = "passing" + monster + \
+                monster = "遇见" + monster + \
                     " " + Split(Pick(K["Klasses"]), 0)
             else:
                 monster = PickLow(K["Titles"]) + " " + \
@@ -180,7 +183,7 @@ class Core:
             level = math.floor(level / qty)
 
         if level - lev <= -10:
-            result = "imaginary " + result
+            result = "幻想的" + result
         elif level - lev < -5:
             i = 10 + (level - lev)
             i = 5 - Random(i + 1)
@@ -190,7 +193,7 @@ class Core:
         elif level - lev < 0:
             result = Young(level - lev, result)
         elif level - lev >= 10:
-            result = "messianic " + result
+            result = "狂热的" + result
         elif level - lev > 5:
             i = 10 - (level - lev)
             i = 5 - Random(i + 1)
@@ -258,7 +261,7 @@ class Core:
         )
 
     def WinEquip(self):
-        posn = Random(self.Equips.length())
+        posn = Random(len(self.Equips))
 
         if not posn:
             stuff = K["Weapons"]
@@ -321,11 +324,11 @@ class Core:
 
     def CompleteQuest(self):
         self.QuestBar.reset(50 + RandomLow(1000))
-        if self.Quests.length:
+        if len(self.Quests):
             self.Quests.CheckAll()
             [self.WinSpell, self.WinEquip,
                 self.WinStat, self.WinItem][Random(4)]()
-        while self.Quests.length() > 99:
+        while len(self.Quests) > 99:
             self.Quests.remove0()
 
         self.game["questmonster"] = ""
@@ -335,7 +338,7 @@ class Core:
             level = self.GetI(self.Traits, "Level")
             lev = 0
             for i in range(1, 5):
-                montag = Random(K["Monsters"].length)
+                montag = Random(len(K["Monsters"]))
                 m = K["Monsters"][montag]
                 l = int(Split(m, 1))
                 if i == 1 or abs(l - level) < abs(lev - level):
@@ -359,7 +362,7 @@ class Core:
             mlev = 0
             level = self.GetI(self.Traits, "Level")
             for ii in range(1, 3):
-                montag = Random(K["Monsters"].length)
+                montag = Random(len(K["Monsters"]))
                 m = K["Monsters"][montag]
                 l = int(Split(m, 1))
                 if ii == 1 or abs(l - level) < abs(mlev - level):
@@ -382,12 +385,12 @@ class Core:
 
     def CompleteAct(self):
         self.Plots.CheckAll()
-        self.game["act"] += 1
+        self.game["章节"] += 1
         self.PlotBar.reset(60 * 60 * (1 + 5 * self.game["act"]))
         self.game["bestplot"] = "Act " + toRoman(self.game["act"])
         self.Plots.AddUI(self.game["bestplot"])
 
-        if self.game["act"] > 1:
+        if self.game["章节"] > 1:
             self.WinItem()
             self.WinEquip()
         
@@ -439,10 +442,10 @@ class Core:
 
     def LevelUp(self):
         self.Add(self.Traits, "Level", 1)
-        self.Add(self.Stats, "HP Max", self.GetI(
-            self.Stats, "CON") // 3 + 1 + Random(4))
-        self.Add(self.Stats, "MP Max", self.GetI(
-            self.Stats, "INT") // 3 + 1 + Random(4))
+        self.Add(self.Stats, "最大生命值", self.GetI(
+            self.Stats, "体质") // 3 + 1 + Random(4))
+        self.Add(self.Stats, "最大魔法值", self.GetI(
+            self.Stats, "智力") // 3 + 1 + Random(4))
         self.WinStat()
         self.WinStat()
         self.WinSpell()
@@ -467,7 +470,7 @@ class Core:
         for i in [self.Plots, self.Quests]:
             i.CheckAll(True)
 
-        self.setWindowTitle("Progress Quest - " + self.game["Traits"]["Name"])
+        self.setWindowTitle("Progress Quest - " + self.game["特征"]["名字"])
 
     def Progress(self):
         if self.TaskBar.done():
@@ -486,13 +489,13 @@ class Core:
                 else:
                     self.ExpBar.increment(self.TaskBar.Max() / 1000)
 
-            if gain and self.game["act"] >= 1:
+            if gain and self.game["章节"] >= 1:
                 if self.QuestBar.done() or not self.Quests.length:
                     self.CompleteQuest()
                 else:
                     self.QuestBar.increment(self.TaskBar.Max() / 1000)
 
-            if gain or not self.game["act"]:
+            if gain or not self.game["章节"]:
                 if self.PlotBar.done():
                     self.InterplotCinematic()
                 else:
@@ -510,11 +513,11 @@ class Core:
         self.lasttick = timeGetTime()
 
     def HotOrNot(self):
-        if self.Spells.length():
+        if len(self.Spells):
             flat = 1
             best = 0
 
-            for i in range(1, self.Spells.length()):
+            for i in range(1, len(self.Spells)):
                 if ((i+flat) * toArabic(self.Get(self.Spells, i)) >
                         (best+flat) * toArabic(self.Get(self.Spells, best))):
                     best = i
@@ -526,6 +529,13 @@ class Core:
 
     def SaveGame(self):
         self.HotOrNot()
-
+        save_dir = 'save'
         self.game["seed"] = list(randseed())
-        json.dump(self.game, open(self.savePath, 'w'), indent=2)
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
+        filename = self.game["特征"]["名字"] + ".pq.json"
+        save_path = os.path.join(save_dir, filename)
+        json.dump(self.game, open(save_path, 'w'), indent=2)
+        self.savePath = save_path
+        
+  

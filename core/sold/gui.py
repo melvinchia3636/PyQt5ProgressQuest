@@ -1,7 +1,10 @@
 from PyQt5 import QtCore, QtWidgets
 from core.game.conf import conf
+import json
 
-K = conf.K
+with open('core/game/config.json', encoding='utf-8') as f:
+    K = json.load(f)
+
 RandomName = conf.GenerateName
 Random = conf.Random
 
@@ -51,7 +54,7 @@ class UISold:
         self.mainLayout.addLayout(self.horizontalLayout_2, 2, 1, 1, 2)
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        for index, stat in enumerate(K.PrimeStats):
+        for index, stat in enumerate(K["PrimeStats"]):
             self.label_2 = QtWidgets.QLabel(self.statsGroup)
             self.label_2.setText(stat)
             self.statsGroupLayout.addWidget(self.label_2, index, 0, 1, 1)
@@ -72,8 +75,8 @@ class UISold:
         self.totalInput.setReadOnly(True)
         self.totalInput.setAlignment(QtCore.Qt.AlignCenter)
 
-        n = Random(len(K.Races))
-        for index, race in enumerate(K.Races):
+        n = Random(len(K["Races"]))
+        for index, race in enumerate(K["Races"]):
             self.radioButton = QtWidgets.QRadioButton(self.raceGroup)
             self.radioButton.setText(race.split("|")[0])
             self.raceGroupLayout.addWidget(self.radioButton)
@@ -81,8 +84,8 @@ class UISold:
             if index == n:
                 self.radioButton.setChecked(True)
 
-        n = Random(len(K.Klasses))
-        for index, klass in enumerate(K.Klasses):
+        n = Random(len(K["Klasses"]))
+        for index, klass in enumerate(K["Klasses"]):
             self.radioButton_2 = QtWidgets.QRadioButton(self.classGroup)
             self.radioButton_2.setText(klass.split("|")[0])
             self.classGroupLayout.addWidget(self.radioButton_2)
@@ -109,14 +112,14 @@ class UISold:
         self.unrollButton.setSizePolicy(sizePolicy)
 
     def setWidgetText(self, Window):
-        Window.setWindowTitle("New Character")
+        Window.setWindowTitle("新冒险者")
 
         self.raceGroup.setTitle("种族")
         self.classGroup.setTitle("职业")
         self.statsGroup.setTitle("属性")
 
         self.label.setText("姓名")
-        self.randomNameButton.setText("?")
+        self.randomNameButton.setText("随机生成")
 
         self.totalInputLabel.setText("合计")
         self.rollButton.setText("随机")

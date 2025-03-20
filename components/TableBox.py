@@ -15,6 +15,11 @@ class TableBox(QTableWidget):
         self.setShowGrid(False)
         self.setRowCount(0)
         self.setColumnCount(2)
+        self.setHorizontalHeaderLabels(['键', '值'])
+        
+        font = self.font()
+        font.setFamily('Microsoft YaHei')
+        self.setFont(font)
 
     def ClearSelection(self):
         self.clearSelection()
@@ -46,6 +51,9 @@ class TableBox(QTableWidget):
         self.scrollTo(self.model().index(0, 0),
                       QAbstractItemView.PositionAtTop)
 
+    def __len__(self):
+        return self.length()
+
     def length(self):
         return len(self.fixedkeys or self.game[self.id])
 
@@ -69,8 +77,10 @@ class TableBox(QTableWidget):
 
         if type(self.game[self.id]) is dict:
             for key, value in self.game[self.id].items():
-                if key[0].isupper():
-                    self.PutUI(key, value)
+                # 移除首字母大写检查
+                if key=='seed' or key=='dna' or key=='智慧' or key=='魅力' or key=='best':
+                    continue
+                self.PutUI(key, value)
 
     def label(self, n):
         return self.fixedkeys[n] if self.fixedkeys else self.game[self.id][n][0]
